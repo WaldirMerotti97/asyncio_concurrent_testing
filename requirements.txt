@@ -1,0 +1,4 @@
+aiohttp
+requests-futures
+requests~=2.27.1
+timebudget
