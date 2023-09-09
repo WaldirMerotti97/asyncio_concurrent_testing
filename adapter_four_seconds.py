@@ -1,8 +1,9 @@
 import asyncio
-from time import sleep
+from async_lru import alru_cache
 
 
-async def get_resultado(s):
+@alru_cache(ttl=30)
+async def get_resultado(s, event):
     async with s.get('https://www.google.com.br') as r:
         await asyncio.sleep(4)  # non-blocking
         # sleep(4) # blocking
